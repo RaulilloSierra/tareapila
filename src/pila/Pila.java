@@ -2,6 +2,7 @@
 package pila;
 
 import java.util.Stack;//se importa la libreria stack para cosntruir y/o modiciar elementos pila
+import javax.swing.JOptionPane;
 
 public class Pila {
 //Existen varios metodos nativos de la clase Stack
@@ -18,19 +19,33 @@ public class Pila {
         
         Stack Pila = new Stack();
         while(w != 0){
+            try {
+                String Mensaje = JOptionPane.showInputDialog("\n Eliga la opcion: \n 1. Ingresar elemento en la pila (push) "+
+                        "\n 2. Mostrar el contenido de la pila \n"+
+                        "3. Digite 0 para salir");
+                w=Integer.parseInt(Mensaje);
+                switch (w){
+                    case 1:
+                        Pila.push(JOptionPane.showInputDialog("Ingrese Valor"));
+                        break;
+                    case 2:
+                        JOptionPane.showMessageDialog(null, "La pila va asi");
+                        while (Pila.empty()==false){
+                        JOptionPane.showMessageDialog(null, Pila.pop());
+        }
+                }
+            }catch (Exception e){
+                JOptionPane.showMessageDialog(null, "Incorrecto");
+            }
             
         }
-        Pila.push(15);//EStamos insertando el numero 15 en la pila
+        
         /*
         Los estudiantes deben de hacer un ciclo de tal manera que el usuario determine cuantos elementos quiere en la pila
         */
-        Pila.push("p");
-        System.out.println("Ultimo de la pila es: \n "+Pila.peek());
-        System.out.println("La pila esta compuesta por ");
-        System.out.println("");
-        while (Pila.empty()==false){
-            System.out.println(Pila.pop());
-        }   
+        
+        
+          
         
     }
 }
