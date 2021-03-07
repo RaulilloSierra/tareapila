@@ -23,19 +23,19 @@ public class Pila {
                 String Mensaje = JOptionPane.showInputDialog("\n Eliga la opcion: \n 1. Ingresar elemento en la pila (push) "+
                         "\n 2. Mostrar el contenido de la pila \n"+
                         "3. Digite 0 para salir");
-                w=Integer.parseInt(Mensaje);
-                switch (w){
-                    case 1:
-                        Pila.push(JOptionPane.showInputDialog("Ingrese Valor"));
+                w=Integer.parseInt(Mensaje);//Capturador de la opcion a elegir
+                switch (w){//captura la opcion a elegir
+                    case 1://se designa las opciones para la opcion 1
+                        Pila.push(JOptionPane.showInputDialog("Ingrese Valor unicamente alfabetico"));//Aqui se ingresan los valores en la pila
                         break;
-                    case 2:
-                        JOptionPane.showMessageDialog(null, "La pila va asi");
-                        while (Pila.empty()==false){
+                    case 2://se designa las opciones para la opcion 2
+                        JOptionPane.showMessageDialog(null, "La pila va asi");//el enunciado
+                        while (Pila.empty()==false){//a traves de un while se genera la vista de las opciones
                         JOptionPane.showMessageDialog(null, Pila.pop());
         }
                 }
             }catch (Exception e){
-                JOptionPane.showMessageDialog(null, "Incorrecto");
+                JOptionPane.showMessageDialog(null, "Incorrecto");// en caso de elegir la opcion incorrecta
             }
             
         }
